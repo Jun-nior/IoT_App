@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
         startMQTT();
     }
-    
+
 
     public void sendDataMQTT(String topic, String value){
         MqttMessage msg = new MqttMessage();
