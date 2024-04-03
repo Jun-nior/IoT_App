@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "WiFi is disconnected. Buttons are disabled.", Toast.LENGTH_SHORT).show();
         }
     }
+    
 //
 //    @Override
 //    protected void onStart() {
