@@ -20,7 +20,7 @@ public class MQTTHelper {
 
     public final String[] arrayTopics = {"Jun_nior/feeds/cambien1", "Jun_nior/feeds/cambien2", "Jun_nior/feeds/cambien3", "Jun_nior/feeds/nutnhan1", "Jun_nior/feeds/nutnhan2"};
 
-    final String clientId = "12345678";
+    final String clientId = "88";
     final String username = "Jun_nior";
     final String password = "aio_glnz98XOpRgQM2p9AKbL5f3UmEnQ";
 

@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         btnPUMP.setEnabled(isConnected);
         if (!isConnected) {
             Toast.makeText(MainActivity.this, "WiFi is disconnected. Buttons are disabled.", Toast.LENGTH_SHORT).show();
+        } else {
+
         }
     }
     
@@ -165,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         mqttHelper.setCallback(new MqttCallbackExtended() {
             @Override
             public void connectComplete(boolean reconnect, String serverURI) {
-
+                Toast.makeText(getApplicationContext(), "WiFi connection available", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -197,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 }
-                
+
             }
 
             @Override

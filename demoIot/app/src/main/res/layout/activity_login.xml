@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#B3E5FC">
+
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="208dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/Server"
+        android:background="@drawable/text_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter Adafruit Server"
+        android:inputType="textUri" />
+
+    <EditText
+        android:id="@+id/Key"
+        android:background="@drawable/text_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Enter Adafruit Key"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Login"
+        android:backgroundTint="@color/purple_500"/>
+
+</LinearLayout>
