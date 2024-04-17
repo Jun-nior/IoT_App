@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         if (server.equals("Jun_nior")) {
             return true;
         }
-        return false;
+        return true;
     }
 
     private void saveCredentials(String server, String key) {

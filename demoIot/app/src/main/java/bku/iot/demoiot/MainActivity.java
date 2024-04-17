@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import android.content.Context;
@@ -31,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
     MQTTHelper mqttHelper;
     TextView txtTemp, txtHumi, txtLux;
     LabeledSwitch btnLED, btnPUMP;
+
+    private ImageView ictemp;
+    private ImageView ichumid;
+    private ImageView iclux;
 
     private boolean isWiFiConnected() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -103,6 +109,36 @@ public class MainActivity extends AppCompatActivity {
         txtLux = findViewById(R.id.txtLux);
         btnLED = findViewById(R.id.btnLED);
         btnPUMP = findViewById(R.id.btnPUMP);
+        ictemp = findViewById(R.id.ictemp);
+        ichumid= findViewById(R.id.ichumid);
+        iclux= findViewById(R.id.iclux);
+
+        ictemp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start a new Activity
+                Intent intent = new Intent(MainActivity.this, TempActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ichumid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start a new Activity
+                Intent intent = new Intent(MainActivity.this, HumidActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        iclux.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start a new Activity
+                Intent intent = new Intent(MainActivity.this, LuxActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnLED.setOnToggledListener(new OnToggledListener() {
             @Override
@@ -120,6 +156,11 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     sendDataMQTT("Jun_nior/feeds/nutnhan1", "0");
                 }
+//                if (isOn) {
+//                    sendDataMQTT("Junnn123/feeds/light-led", "1");
+//                } else {
+//                    sendDataMQTT("Junnn123/feeds/light-led", "0");
+//                }
             }
         });
 
@@ -139,13 +180,17 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     sendDataMQTT("Jun_nior/feeds/nutnhan2", "0");
                 }
+//                if (isOn) {
+//                    sendDataMQTT("Junnn123/feeds/light-led", "1");
+//                } else {
+//                    sendDataMQTT("Junnn123/feeds/light-led", "0");
+//                }
             }
         });
 
 
         startMQTT();
     }
-
 
     public void sendDataMQTT(String topic, String value){
         MqttMessage msg = new MqttMessage();
