@@ -151,16 +151,16 @@ public class MainActivity extends AppCompatActivity {
                 }
                 toggleableView.setEnabled(true); // Ensure the button is enabled
                 // Proceed with your original code
-                if (isOn) {
-                    sendDataMQTT("Jun_nior/feeds/nutnhan1", "1");
-                } else {
-                    sendDataMQTT("Jun_nior/feeds/nutnhan1", "0");
-                }
 //                if (isOn) {
-//                    sendDataMQTT("Junnn123/feeds/light-led", "1");
+//                    sendDataMQTT("Jun_nior/feeds/nutnhan1", "1");
 //                } else {
-//                    sendDataMQTT("Junnn123/feeds/light-led", "0");
+//                    sendDataMQTT("Jun_nior/feeds/nutnhan1", "0");
 //                }
+                if (isOn) {
+                    sendDataMQTT("Junnn123/feeds/button-led", "1");
+                } else {
+                    sendDataMQTT("Junnn123/feeds/button-led", "0");
+                }
             }
         });
 
@@ -175,16 +175,16 @@ public class MainActivity extends AppCompatActivity {
                 }
                 toggleableView.setEnabled(true); // Ensure the button is enabled
                 // Proceed with your original code
-                if (isOn) {
-                    sendDataMQTT("Jun_nior/feeds/nutnhan2", "1");
-                } else {
-                    sendDataMQTT("Jun_nior/feeds/nutnhan2", "0");
-                }
 //                if (isOn) {
-//                    sendDataMQTT("Junnn123/feeds/light-led", "1");
+//                    sendDataMQTT("Jun_nior/feeds/nutnhan2", "1");
 //                } else {
-//                    sendDataMQTT("Junnn123/feeds/light-led", "0");
+//                    sendDataMQTT("Jun_nior/feeds/nutnhan2", "0");
 //                }
+                if (isOn) {
+                    sendDataMQTT("Junnn123/feeds/fan", "1");
+                } else {
+                    sendDataMQTT("Junnn123/feeds/fan", "0");
+                }
             }
         });
 
@@ -224,19 +224,19 @@ public class MainActivity extends AppCompatActivity {
             public void messageArrived(String topic, MqttMessage message) throws Exception {
                 if (isWiFiConnected()) {
                     Log.d("TEST", topic + "***" + message.toString());
-                    if (topic.contains("cambien1")) {
+                    if (topic.contains("temp")) {
                         txtTemp.setText(message.toString() + "°C");
-                    } else if (topic.contains("cambien3")) {
+                    } else if (topic.contains("humid")) {
                         txtHumi.setText(message.toString() + "%");
-                    } else if (topic.contains("cambien2")) {
+                    } else if (topic.contains("light")) {
                         txtLux.setText(message.toString());
-                    } else if (topic.contains("nutnhan1")) {
+                    } else if (topic.contains("button-led")) {
                         if (message.toString().equals("1")) {
                             btnLED.setOn(true);
                         } else {
                             btnLED.setOn(false);
                         }
-                    } else if (topic.contains("nutnhan2")) {
+                    } else if (topic.contains("fan")) {
                         if (message.toString().equals("1")) {
                             btnPUMP.setOn(true);
                         } else {
