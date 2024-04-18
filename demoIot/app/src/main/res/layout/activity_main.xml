@@ -51,7 +51,7 @@
                 android:id="@+id/ictemp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/logo"
+                android:src="@drawable/temp"
             />
 
             <TextView
@@ -110,7 +110,7 @@
                 android:id="@+id/ichumid"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/logo"
+                android:src="@drawable/humid"
                 />
 
             <TextView
@@ -154,7 +154,7 @@
                 android:id="@+id/iclux"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/logo"
+                android:src="@drawable/lux"
                 />
 
             <TextView
