@@ -221,7 +221,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="LED"
+            android:text="LIGHT"
             android:textColor="#E75480"
             android:textSize="25dp" />
 
@@ -286,7 +286,7 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="PUMP"
+            android:text="FAN"
             android:textColor="#E75480"
             android:textSize="25dp" />
 

@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
                         txtTemp.setText(message.toString() + "°C");
                         int temperature = Integer.parseInt(message.toString());
                         if (temperature > 35) {  // Assuming 30°C is the threshold for high temperature
-                            Toast.makeText(getApplicationContext(), "Warning: High temperature!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Warning: High temperature!", Toast.LENGTH_SHORT).show();
                         }
                     } else if (topic.contains("humid")) {
                         txtHumi.setText(message.toString() + "%");
@@ -236,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
                         txtLux.setText(message.toString());
                         int lux = Integer.parseInt(message.toString());
                         if (lux <= 50) {  // Assuming 30°C is the threshold for high temperature
-                            Toast.makeText(getApplicationContext(), "Warning: Insufficient light!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Warning: Insufficient light!", Toast.LENGTH_SHORT).show();
                         }
                     } else if (topic.contains("button-led")) {
                         if (message.toString().equals("1")) {
