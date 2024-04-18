@@ -77,7 +77,7 @@ public class LuxActivity extends AppCompatActivity {
 
         YAxis yAxis = lineChart.getAxisLeft();
         yAxis.setAxisMinimum(0f);
-        yAxis.setAxisMaximum(500f);
+        yAxis.setAxisMaximum(100f);
         yAxis.setAxisLineWidth(2f);
         yAxis.setAxisLineColor(Color.BLACK);
         yAxis.setLabelCount(10);
@@ -117,12 +117,12 @@ public class LuxActivity extends AppCompatActivity {
             public void messageArrived(String topic, MqttMessage message) throws Exception {
                 if (isWiFiConnected()) {
                     Log.d("TEST", topic + "***" + message.toString());
-                    if (topic.contains("cambien2")) {
+                    if (topic.contains("light")) {
 //                        txtTemp.setText(message.toString() + "°C");
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                txtLux.setText(message.toString() + "Lux");
+                                txtLux.setText(message.toString() + " Lux");
                                 try {
                                     // Parse the temperature value from the MQTT message
                                     float tempValue = Float.parseFloat(message.toString());
@@ -138,7 +138,7 @@ public class LuxActivity extends AppCompatActivity {
                                     }
                                     lineChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xValues));
                                     lineDataSet = new LineDataSet(entries, "Lux");
-                                    lineDataSet.setColor(Color.RED);
+                                    lineDataSet.setColor(Color.YELLOW);
                                     LineData data= new LineData(lineDataSet);
                                     lineChart.setData(data);
                                     lineChart.invalidate();

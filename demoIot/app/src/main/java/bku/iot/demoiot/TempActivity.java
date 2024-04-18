@@ -79,7 +79,7 @@ public class TempActivity extends AppCompatActivity {
 
         YAxis yAxis = lineChart.getAxisLeft();
         yAxis.setAxisMinimum(10f);
-        yAxis.setAxisMaximum(40f);
+        yAxis.setAxisMaximum(50f);
         yAxis.setAxisLineWidth(2f);
         yAxis.setAxisLineColor(Color.BLACK);
         yAxis.setLabelCount(10);
@@ -121,7 +121,7 @@ public class TempActivity extends AppCompatActivity {
             public void messageArrived(String topic, MqttMessage message) throws Exception {
                 if (isWiFiConnected()) {
                     Log.d("TEST", topic + "***" + message.toString());
-                    if (topic.contains("cambien1")) {
+                    if (topic.contains("temp")) {
 //                        txtTemp.setText(message.toString() + "°C");
                         runOnUiThread(new Runnable() {
                             @Override

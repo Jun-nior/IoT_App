@@ -120,7 +120,7 @@ public class HumidActivity extends AppCompatActivity {
             public void messageArrived(String topic, MqttMessage message) throws Exception {
                 if (isWiFiConnected()) {
                     Log.d("TEST", topic + "***" + message.toString());
-                    if (topic.contains("cambien3")) {
+                    if (topic.contains("humid")) {
 //                        txtTemp.setText(message.toString() + "°C");
                         runOnUiThread(new Runnable() {
                             @Override
