@@ -25,7 +25,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="9"
-            android:text="IOT DEMO"
+            android:text="SMART LIBRARY"
             android:gravity="center"
             android:textColor="#E75480"
             android:textSize="30dp">
@@ -51,7 +51,7 @@
                 android:id="@+id/ictemp"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/logo"
+                android:src="@drawable/temp"
             />
 
             <TextView
@@ -110,7 +110,7 @@
                 android:id="@+id/ichumid"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/logo"
+                android:src="@drawable/humid"
                 />
 
             <TextView
@@ -154,7 +154,7 @@
                 android:id="@+id/iclux"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/logo"
+                android:src="@drawable/lux"
                 />
 
             <TextView
