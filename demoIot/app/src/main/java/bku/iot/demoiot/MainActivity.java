@@ -8,7 +8,9 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import android.content.Context;
@@ -32,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
     MQTTHelper mqttHelper;
     TextView txtTemp, txtHumi, txtLux;
-    LabeledSwitch btnLED, btnPUMP;
+//    LabeledSwitch btnLED, btnPUMP;
+
+    Switch btnLED, btnPUMP;
 
     private ImageView ictemp;
     private ImageView ichumid;
@@ -56,12 +60,12 @@ public class MainActivity extends AppCompatActivity {
 //
     private void updateButtonStates() {
         boolean isConnected = isWiFiConnected();
-        btnLED.setEnabled(isConnected);
-        btnPUMP.setEnabled(isConnected);
+//        btnLED.setEnabled(isConnected);
+//        btnPUMP.setEnabled(isConnected);
         if (!isConnected) {
             Toast.makeText(MainActivity.this, "WiFi is disconnected. Buttons are disabled.", Toast.LENGTH_SHORT).show();
         } else {
-
+            Toast.makeText(MainActivity.this, "WiFi available", Toast.LENGTH_SHORT).show();
         }
     }
     
@@ -140,51 +144,89 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnLED.setOnToggledListener(new OnToggledListener() {
+//        btnLED.setOnToggledListener(new OnToggledListener() {
+//            @Override
+//            public void onSwitched(ToggleableView toggleableView, boolean isOn) {
+//                if (!isWiFiConnected()) {
+//                    // Optionally, inform the user that there is no WiFi connection
+//                    Toast.makeText(getApplicationContext(), "No WiFi connection available", Toast.LENGTH_SHORT).show();
+//                    toggleableView.setEnabled(false); // Disable the button
+//                    return; // Exit the method
+//                }
+//                toggleableView.setEnabled(true); // Ensure the button is enabled
+//                // Proceed with your original code
+//                if (isOn) {
+//                    sendDataMQTT("Jun_nior/feeds/nutnhan1", "1");
+//                } else {
+//                    sendDataMQTT("Jun_nior/feeds/nutnhan1", "0");
+//                }
+////                if (isOn) {
+////                    sendDataMQTT("Junnn123/feeds/light-led", "1");
+////                } else {
+////                    sendDataMQTT("Junnn123/feeds/light-led", "0");
+////                }
+//            }
+//        });
+        btnLED.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onSwitched(ToggleableView toggleableView, boolean isOn) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (!isWiFiConnected()) {
                     // Optionally, inform the user that there is no WiFi connection
                     Toast.makeText(getApplicationContext(), "No WiFi connection available", Toast.LENGTH_SHORT).show();
-                    toggleableView.setEnabled(false); // Disable the button
+                    buttonView.setChecked(!isChecked); // Revert the button state
                     return; // Exit the method
                 }
-                toggleableView.setEnabled(true); // Ensure the button is enabled
-                // Proceed with your original code
-                if (isOn) {
+
+                // If there's a WiFi connection, proceed with the MQTT data sending
+                if (isChecked) {
                     sendDataMQTT("Jun_nior/feeds/nutnhan1", "1");
                 } else {
                     sendDataMQTT("Jun_nior/feeds/nutnhan1", "0");
                 }
-//                if (isOn) {
-//                    sendDataMQTT("Junnn123/feeds/light-led", "1");
-//                } else {
-//                    sendDataMQTT("Junnn123/feeds/light-led", "0");
-//                }
             }
         });
 
-        btnPUMP.setOnToggledListener(new OnToggledListener() {
+
+//        btnPUMP.setOnToggledListener(new OnToggledListener() {
+//            @Override
+//            public void onSwitched(ToggleableView toggleableView, boolean isOn) {
+//                if (!isWiFiConnected()) {
+//                    // Optionally, inform the user that there is no WiFi connection
+//                    Toast.makeText(getApplicationContext(), "No WiFi connection available", Toast.LENGTH_SHORT).show();
+//                    toggleableView.setEnabled(false); // Disable the button
+//                    return; // Exit the method
+//                }
+//                toggleableView.setEnabled(true); // Ensure the button is enabled
+//                // Proceed with your original code
+//                if (isOn) {
+//                    sendDataMQTT("Jun_nior/feeds/nutnhan2", "1");
+//                } else {
+//                    sendDataMQTT("Jun_nior/feeds/nutnhan2", "0");
+//                }
+////                if (isOn) {
+////                    sendDataMQTT("Junnn123/feeds/light-led", "1");
+////                } else {
+////                    sendDataMQTT("Junnn123/feeds/light-led", "0");
+////                }
+//            }
+//        });
+
+        btnPUMP.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onSwitched(ToggleableView toggleableView, boolean isOn) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (!isWiFiConnected()) {
                     // Optionally, inform the user that there is no WiFi connection
                     Toast.makeText(getApplicationContext(), "No WiFi connection available", Toast.LENGTH_SHORT).show();
-                    toggleableView.setEnabled(false); // Disable the button
+                    buttonView.setChecked(!isChecked); // Revert the button state
                     return; // Exit the method
                 }
-                toggleableView.setEnabled(true); // Ensure the button is enabled
-                // Proceed with your original code
-                if (isOn) {
+
+                // If there's a WiFi connection, proceed with the MQTT data sending
+                if (isChecked) {
                     sendDataMQTT("Jun_nior/feeds/nutnhan2", "1");
                 } else {
                     sendDataMQTT("Jun_nior/feeds/nutnhan2", "0");
                 }
-//                if (isOn) {
-//                    sendDataMQTT("Junnn123/feeds/light-led", "1");
-//                } else {
-//                    sendDataMQTT("Junnn123/feeds/light-led", "0");
-//                }
             }
         });
 
@@ -212,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
         mqttHelper.setCallback(new MqttCallbackExtended() {
             @Override
             public void connectComplete(boolean reconnect, String serverURI) {
-                Toast.makeText(getApplicationContext(), "WiFi connection available", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "WiFi connection available", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -232,15 +274,15 @@ public class MainActivity extends AppCompatActivity {
                         txtLux.setText(message.toString());
                     } else if (topic.contains("nutnhan1")) {
                         if (message.toString().equals("1")) {
-                            btnLED.setOn(true);
+                            btnLED.setChecked(true);
                         } else {
-                            btnLED.setOn(false);
+                            btnLED.setChecked(false);
                         }
                     } else if (topic.contains("nutnhan2")) {
                         if (message.toString().equals("1")) {
-                            btnPUMP.setOn(true);
+                            btnPUMP.setChecked(true);
                         } else {
-                            btnPUMP.setOn(false);
+                            btnPUMP.setChecked(false);
                         }
                     }
                 }
