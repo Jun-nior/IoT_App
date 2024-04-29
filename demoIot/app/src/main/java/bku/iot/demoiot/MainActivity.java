@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import android.content.Context;
@@ -34,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
     TextView txtTemp, txtHumi, txtLux;
     LabeledSwitch btnLED, btnPUMP;
 
-    private ImageView ictemp;
-    private ImageView ichumid;
-    private ImageView iclux;
+    private LinearLayout ictemp;
+    private LinearLayout ichumid;
+    private LinearLayout iclux;
 
     private boolean isWiFiConnected() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);

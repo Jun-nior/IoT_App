@@ -3,6 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14635416666666667" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/drawable/ic_alert.xml" value="0.22135416666666666" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/drawable/ic_key.xml" value="0.3828125" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/drawable/ic_temp.xml" value="0.22135416666666666" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/drawable/item.xml" value="0.25885416666666666" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/drawable/shape.xml" value="0.22135416666666666" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/drawable/text_border.xml" value="0.25885416666666666" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/font/font.xml" value="1.6142857142857143" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/font/roboto.xml" value="0.23541666666666666" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/layout/activity_humid.xml" value="0.264" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/layout/activity_login.xml" value="0.4" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/layout/activity_lux.xml" value="0.264" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/layout/activity_temp.xml" value="0.2" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
+        <entry key="..\:/Duy/IoT_App/demoIot/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.14635416666666667" />
         <entry key="..\:/Trung Main/232/Iot Application Development/Lab/demoIot/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Trung Main/232/Iot Application Development/Lab/git phone/demoIot/app/src/main/res/layout/activity_humid.xml" value="0.21422101449275363" />
         <entry key="..\:/Trung Main/232/Iot Application Development/Lab/git phone/demoIot/app/src/main/res/layout/activity_login.xml" value="0.19655797101449277" />

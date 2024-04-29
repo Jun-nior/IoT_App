@@ -3,45 +3,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp"
-    android:background="#B3E5FC">
+    android:gravity="center_horizontal"
+    android:padding="0dp"
+    android:background="#FFFFFF">
 
 
-    <ImageView
+    <TextView
         android:id="@+id/ivLogo"
-        android:layout_width="208dp"
-        android:layout_height="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
         android:layout_marginBottom="24dp"
-        android:src="@drawable/logo" />
+        android:background="@drawable/background"
+        android:fontFamily="@font/randrake"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Smart Library"
+        android:textColor="#FFFFFF"
+        android:textSize="120sp" />
 
     <EditText
         android:id="@+id/Server"
+        android:layout_width="278dp"
+        android:layout_height="63dp"
         android:background="@drawable/text_border"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:ems="10"
-        android:gravity="center"
-        android:hint="Enter Adafruit Server"
-        android:inputType="textUri" />
+        android:padding = "20dp"
+        android:gravity="center_vertical"
+        android:hint="Enter adafruit server"
+        android:inputType="textUri"
+        android:fontFamily="@font/robotto"
+        android:drawableRight="@drawable/ic_adafruit"
+
+        />
 
     <EditText
         android:id="@+id/Key"
         android:background="@drawable/text_border"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="278dp"
+        android:layout_height="63dp"
         android:layout_marginTop="16dp"
-        android:hint="Enter Adafruit Key"
+        android:hint="Enter adafruit key"
         android:inputType="textPassword"
         android:ems="10"
-        android:gravity="center"/>
+        android:gravity="center_vertical"
+        android:padding = "20dp"
+        android:fontFamily ="@font/robotto"
+        android:drawableRight="@drawable/ic_key"
+        />
+
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="278dp"
+        android:layout_height="63dp"
         android:layout_marginTop="24dp"
-        android:text="Login"
-        android:backgroundTint="@color/purple_500"/>
+        android:backgroundTint="@color/purple_500"
+        android:radius="12dp"
+        android:text="Login" />
 
 </LinearLayout>
