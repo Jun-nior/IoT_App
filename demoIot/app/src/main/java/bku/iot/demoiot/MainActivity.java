@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         if (!isConnected) {
             Toast.makeText(MainActivity.this, "WiFi is disconnected. Buttons are disabled.", Toast.LENGTH_SHORT).show();
         } else {
-
+            Toast.makeText(getApplicationContext(), "WiFi connection available", Toast.LENGTH_SHORT).show();
         }
     }
     
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
             public void onSwitched(ToggleableView toggleableView, boolean isOn) {
                 if (!isWiFiConnected()) {
                     // Optionally, inform the user that there is no WiFi connection
-                    Toast.makeText(getApplicationContext(), "No WiFi connection available", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "No WiFi connection available", Toast.LENGTH_SHORT).show();
                     toggleableView.setEnabled(false); // Disable the button
                     return; // Exit the method
                 }
@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
             public void onSwitched(ToggleableView toggleableView, boolean isOn) {
                 if (!isWiFiConnected()) {
                     // Optionally, inform the user that there is no WiFi connection
-                    Toast.makeText(getApplicationContext(), "No WiFi connection available", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "No WiFi connection available", Toast.LENGTH_SHORT).show();
                     toggleableView.setEnabled(false); // Disable the button
                     return; // Exit the method
                 }
@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
         mqttHelper.setCallback(new MqttCallbackExtended() {
             @Override
             public void connectComplete(boolean reconnect, String serverURI) {
-                Toast.makeText(getApplicationContext(), "WiFi connection available", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "WiFi connection available", Toast.LENGTH_SHORT).show();
             }
 
             @Override
